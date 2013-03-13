@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<T3locallang>
+	<meta type="array">
+		<type>database</type>
+		<description>Language labels for database tables/fields belonging to extension 'sharing_basics'</description>
+	</meta>
+	<data type="array">
+		<languageKey index="default" type="array">
+			<label index="pages.tx_sharingbasics_title">Title</label>
+			<label index="pages.tx_sharingbasics_description">Description</label>
+			<label index="pages.tx_sharingbasics_media">Thumbnail</label>
+			<label index="pages_language_overlay.tx_sharingbasics_title">Title</label>
+			<label index="pages_language_overlay.tx_sharingbasics_description">Description</label>
+		</languageKey>
+		<languageKey index="de" type="array">
+			<label index="pages.tx_sharingbasics_title">Titel</label>
+			<label index="pages.tx_sharingbasics_description">Kurztext/Beschreibung</label>
+			<label index="pages.tx_sharingbasics_media">Vorschaubild</label>
+			<label index="pages_language_overlay.tx_sharingbasics_title">Titel</label>
+			<label index="pages_language_overlay.tx_sharingbasics_description">Kurztext/Beschreibung</label>
+		</languageKey>
+	</data>
+</T3locallang>

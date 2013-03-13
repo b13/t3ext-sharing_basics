@@ -1,0 +1,15 @@
+plugin.tx_sharingbasics {
+	
+	# cat=plugin.sharingbasics/string; type=string; label= Sitename, provides Facebook and other platforms the name that you would like your website to be recognized by
+	siteName = 
+	
+	# cat=plugin.sharingbasics/string; type=string; label= GET parameters to be excluded from automatically generated canonical url for pagetracking (Default: cHash,no_cache,type,print)
+	excludeParameters = cHash,no_cache,type,print
+	
+	# cat=plugin.sharingbasics/string; type=string; label= User-IDs of one or more Facebook users that will be authenticated to view Facebook Insights on this domain/website. If more than one user-ID, use a comma-separated list
+	fbadmins = 
+	
+	# cat=plugin.sharingbasics/string; type=string; label= App-IDs of one or more Facebook apps, where admins of these apps will be authenticated to view Facebook Insights on this domain/website.
+	fb_appid = 
+
+}

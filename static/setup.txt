@@ -1,0 +1,81 @@
+plugin.tx_sharingbasics >
+plugin.tx_sharingbasics = COA
+plugin.tx_sharingbasics {
+
+		# Append a line break for every header tag
+	5 = TEXT
+	5.value (
+
+	
+)
+
+		# Building the og:-Meta-Tags
+		# We only output a tag if a value is given, otherwise Facebook should use the actual page-content
+		# Title
+	10 = TEXT
+	10.data = TSFE:tmpl|sitetitle
+	10.override = {$plugin.tx_sharingbasics.siteName}
+#	10.value.override.data = TSFE:tmpl|sitetitle
+#	10.value.override.if.isEmpty = {$plugin.tx_sharingbasics.siteName}
+	10.required = 1
+	10.wrap = <meta property="og:site_name" content=" | " />
+	10.append < .5
+
+	20 = TEXT
+	20.data = page:tx_sharingbasics_title // page:title
+	20.trim = 1
+	20.htmlSpecialChars = 1
+	20.wrap = <meta property="og:title" content=" | " />
+	20.required = 1
+	20.append < .5
+
+	30 = TEXT
+	30.data = page:tx_sharingbasics_description
+	30.trim = 1
+	30.htmlSpecialChars = 1
+	30.wrap = <meta property="og:description" content=" | " />
+	30.required = 1
+	30.append < .5
+	
+	40 = TEXT
+	40.data = page:tx_sharingbasics_media
+	40.listNum = 0
+	40.trim = 1
+	40.dataWrap = <meta property="og:image" content="{getIndpEnv:TYPO3_SITE_URL}uploads/tx_sharingbasics/ | " />
+	40.required = 1
+	40.append < .5
+	
+	41 < .40
+	41.listNum = 1
+	42 < .40
+	42.listNum = 2
+	43 < .40
+	43.listNum = 3
+	44 < .40
+	44.listNum = 4
+	
+	50 = TEXT
+	50.typolink.parameter.data = TSFE:id
+	50.typolink.addQueryString.exclude = cHash,no_cache,type,print
+	50.typolink.addQueryString.exclude.override.value = {$plugin.tx_sharingbasics.excludeParameters}
+	50.typolink.forceAbsoluteUrl = 1
+	50.typolink.returnLast = url
+	50.wrap = <meta property="og:url" content=" | " />
+	50.append < .5
+
+		# add fb:admins and fb:app_id if needed
+	60 = TEXT
+	60.value = {$plugin.tx_sharingbasics.fbadmins}
+	60.wrap = <meta property="fb:admins" content=" | " />
+	60.required = 1
+	60.append < .5
+	70 = TEXT
+	70.value = {$plugin.tx_sharingbasics.fb_appid}
+	70.wrap = <meta property="fb:app_id" content=" | " />
+	70.required = 1
+	70.append < .5
+}
+
+# now we include the metatags into the header of a default "page."-configuration
+page.headerData.1377 < plugin.tx_sharingbasics
+
