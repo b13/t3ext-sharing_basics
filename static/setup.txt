@@ -78,5 +78,5 @@ plugin.tx_sharingbasics {
 }
 
 # now we include the metatags into the header of a default "page."-configuration
-page.headerData.1377 < plugin.tx_sharingbasics
+page.headerData.1377 = < plugin.tx_sharingbasics
 
